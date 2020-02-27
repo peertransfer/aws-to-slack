@@ -68,7 +68,7 @@ class Slack {
 			const hookUrl = await hookUrlPromise;
 			const slackChannel = await slackChannelPromise;
       
-      if (_.isEmpty(message.hookUrl) && !_.isEmpty(hookUrl)) {
+      if (!_.isEmpty(message.hookUrl) && !_.isEmpty(hookUrl)) {
         hookUrl = message.hookUrl;
         delete message.hookUrl;
 			}
