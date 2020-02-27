@@ -70,6 +70,7 @@ class Slack {
       
       if (!_.isEmpty(message.hookUrl) && !_.isEmpty(hookUrl)) {
         hookUrl = message.hookUrl;
+        console.info("Message with custom hookUrl.");
         delete message.hookUrl;
 			}
 
