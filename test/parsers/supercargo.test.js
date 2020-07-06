@@ -11,7 +11,7 @@ const supercargoSnsPacket = {
 			"Signature": "EXAMPLE",
 			"SigningCertUrl": "EXAMPLE",
 			"MessageId": "95df01b4-ee98-5cb9-9903-4c221d41eb5e",
-			"Message":"{\"options\": {\"color\": \"warning\", \"format\": \"raw\"}, \"slack_channel\": \"#victoria-monitoring\", \"slack_hook_url\": \"https://hooks.slack.com/services/xxxxxxxxxxxxxx\", \"message\": \"some message to #victoria-monitoring\"}",
+			"Message":"{\"options\": {\"color\": \"warning\", \"format\": \"raw\"}, \"origin\": \"supercargo\", \"slack_channel\": \"#a_channel\", \"message\": \"some message to #a_channel\"}",
 			"Type": "Notification",
 			"UnsubscribeUrl": "EXAMPLE",
 			"TopicArn": `arn:aws:sns:region:account-id:topicname`,
@@ -25,6 +25,6 @@ mock.matchesEvent(supercargoSnsPacket);
 
 mock.matchesEventWithDetail(supercargoSnsPacket, {
 	"color": "warning",
-	"fallback": "some message to #victoria-monitoring",
+	"fallback": "some message to #a_channel",
 	"title": "TestInvoke",
 });
